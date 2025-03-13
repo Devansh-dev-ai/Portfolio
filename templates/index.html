@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'tailwindCss.css' %}">
+    <style>
+        header{
+            height: 13vh;
+        }
+        .contact-heading{
+            font-size: 3vw;
+        }
+        .contact-p{
+            font-size: 2vw;
+        }
+        .contact-font{
+            font-size: 1.4vw;
+        }
+        .input-box{
+            width: 14vw;
+        }
+        .input-box-yextarea{
+            height: 10vw;
+        }
+        @media(min-width: 0px) and (max-width: 500px){
+            .contact-heading{
+                font-size: 13px;
+            }
+            .contact-font{
+                font-size: 12px;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body class=" text-white">
+    <header class="bg-[#118AB2]">
+        <nav class="flex flex-wrap pt-2">
+            <div class="rounded-full bg-[#EF476F] ml-2 h-7 w-7 "></div>
+            <div class="grow">
+                <a class = "student"href="#"><strong>Devansh Durgapal</strong></a>
+                <p class = "student">student</p>
+            </div>
+            <div></div>
+            <ul class="flex">
+                <li>
+                    {% for data in resume %}
+                    <a class="" href="{{data.file.url}}" download>Resume |</a>
+                    {% endfor %}
+                </li>
+                <li><a href="#project">Projects |</a></li> 
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <hr class="">
+    </header>
+    <div class="">
+        <div class="flex  bg-[#06D6A0] h-fit">
+            <div class="w-1/2  mt-36">
+                <div class="flex place-content-center">
+                    {% for owner in data %}
+                    <img class=" h-80 w-80 rounded-full" src="{{owner.OwnerImage.url}}" alt="User Picture">
+                </div>
+                {% endfor %}
+            </div>
+            <div class="w-1/2 text-lg mt-36">
+                <h2 class="font-serif text-2xl h-fit"><span class="text-[#fca311] hover:text-[#e09f3e]">SOME</span> WORDS ABOUT ME</h2>
+                <hr class="bg-[#EF476F] w-1/6 h-1 rounded-full">
+                <br>
+                <h4 class="font-bold font-serif hover:underline hover:decoration-[#0077b6]">About</h4>
+                <p class="mb-10 mt-2"> Hi, I am second year student persuing B.Tech CSE from <em><b>GBPIET</b></em> Pauri,UK,India 
+                    I was Born in Haldwani also famous as the Gateway to Kumaon. <br>
+                    If was lucky enough to know from my early age that I want to be an engineer. 
+                    But was confused between CSE and Mechanical. Anyways at the I chose computer 
+                    or computer chose me.
+                </p>
+                <h4 class="font-bold font-serif hover:underline hover:decoration-[#0077b6]" >Hobbies</h4>
+                <p class="mb-10 mt-2">
+                    I hobbies are spending time with my friends,watching biographical movies,
+                    playing video games and badminton,exploring nature and learning new things.
+                </p>
+                <h4 class="font-bold font-serif hover:underline hover:decoration-[#0077b6]" >Skills</h4>
+                <p class="mb-16 mt-2">
+                    I have learned different programming languages like C,C++,HTML,CSS but my 
+                    main focus is on Python. <br>
+                    In fact, I have developed a game using pygame and learing backend using Djnago.
+                </p>
+            </div>
+        </div>
+        
+        <div id="project" class="bg-[#FFD166] ">
+            <div class="flex grow place-content-center">
+                <div class="inline text-purple-600 hover:text-purple-700">
+                    <h2 class="hover:underline hover:font-bold hover:transition duration-500 ease-out">MY PROJECTS</h2>
+                </div>
+            </div>
+            <div class="flex place-content-evenly py-14"> 
+                {% for project in projectsdata %}
+                <div class="group">
+                    <div class="relative overflow-hidden">
+                        <a  class = "" href="{{project.github_link}}">
+                            <img class= "h-60 w-60"src="{{project.project_picture.url}}" alt="">
+                        </a>
+                        <div class=" text-lg font-serif font-semibold absolute h-full w-full bg-slate-700/20 flex items-center justify-center -bottom-0 
+                            opacity-0 group-hover:opacity-100 transition-all duration-300">{{project.name}}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <div id="contact" class="bg-[#073B4C]">
+            <div class="flex justify-center py-6">
+                <!-- <p>This is message section. </p> -->
+                {% if messages %}
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">
+                        {{ message|safe }}
+                    </p>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="flex">
+                <div class="w-1/2 flex place-content-center font-serif py-8">
+                    <div class="">
+                        <div class="inline-grid ">
+                            <h1 class="font-bold mt-24 h-1/2 contact-heading">CONTACT</h1> 
+                            <hr class="bg-[#EF476F] w-full h-1 rounded-full">
+                        </div>
+                        <p class="mt-5 contact-font ">Looking forword to hearing form you </p>
+                        <a href="tel:9458358888"><h2 class="font-serif mt-6 contact-p">Phone</h2></a>
+                        <p class=""> +91 9458358888</p>
+                        <a href="mailto:devanshdurgapal18@gmail.com"><h2 class="font-serif mt-6 contact-p">Email</h2></a>
+                        <p class="contact-font">devanshdurgapal18@gmail.com</p>
+                    </div>
+                </div> 
+                
+                <div class="  mt-24">
+                    <form method="post">
+                        
+                        <div class="pt-16 inline-grid">
+                            <label for="id_name">Name:</label>
+                            <input class="text-black input-box" type="text" name="name" id="id_name" maxlength="30">
+                        </div>
+                        <div class="pt-7">
+                            <label class="block" for="id_email">Email:</label>
+                            <input class="text-black input-box" type="email" name="email" id="id_email" maxlength="254">
+                        </div>
+                        <div class="pt-7">
+                            <label class="block" for="id_contact">Contact:</label>
+                            <input class="text-black input-box" type="number" name="contact_phone" required_id="id_contact" maxlength="10">
+                        </div>
+                        <div class="pt-7">
+                            <label class="block" for="id_message">Message:</label>
+                            <textarea class="text-black input-box input-box-yextarea" name="message" id="id_message" cols="40" rows="10"></textarea>
+                        </div>
+                        {% csrf_token %}
+                        <div class="flex place-content-end pt-2 pb-6"><button class="bg-orange-300 rounded-md hover:bg-orange-400 place-items-end" type="submit">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        <!-- <hr> -->
+    </div>
+
+    <footer class="bg-[#118AB2]">
+        <div class=" flex place-content-center">
+            <p >Make with &#9829 by Devansh Durgapal</p>
+        </div>
+        <div class="flex place-content-center">
+            <p>updated in March 2025</p>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>
