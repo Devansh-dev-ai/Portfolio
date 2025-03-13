@@ -1,0 +1,176 @@
+body{
+    padding: 0%;
+    margin: 0%;
+    background-color: #118AB2;
+    color: white;
+}
+
+nav{
+    padding-top: 1%;
+    display: flex;
+    height: auto;
+    color: white;
+    
+
+}
+#nav-circle{
+    margin-left: 2em;
+    background-color:#EF476F;
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+}
+.student{
+    margin-top: 1em;
+    display:inline;
+}
+#StudentAnchor{
+    width: 40%;
+    display: inline;
+}
+
+.container{
+    display: flex;
+    width: 60%;
+    justify-content:end;
+    list-style-type: none;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+    margin-left: 30px;
+}
+
+#main-container{
+    height: 1000px;
+    width:100%;
+}
+
+.common{
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    width: 112px;
+    height: 112px;
+    align-items: center;
+    justify-content: center;
+}
+
+.about{
+    font-family: serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #06D6A0;
+    width: 100%;
+    height: 45em;
+}
+
+.about-container{
+    width: 38em;
+    padding: 0%;
+}
+
+.underlines{
+    width: 5rem;
+    display: inline-block;
+    height: 0.2rem;
+    background-color: #EF476F;
+    border: #EF476F;
+}
+
+#Work-container{
+    width: 100%;
+    height: 20em;
+    font-family: serif;
+    justify-content: center;
+    background-color: #FFD166;
+
+}
+
+.projects{
+    display:flex;
+    position: relative;
+    height:78%;
+    flex-wrap: wrap;
+}
+
+.project_image img {
+    width: 223px;
+    height: auto;
+}
+
+/* .project_hover_content {
+    background-color: rgba(45, 37, 37, 0.632);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    color: beige;
+    opacity: 0.5;
+    transition: opacity 0.9s ease; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+} */
+
+.project_image:hover .project_hover_content {
+    opacity: 0.7; /* Show the content on hover */
+    width: 223px;
+}
+.individual-project div{
+    border: solid black 3px;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+
+
+}
+.individual-project{
+    display: block;
+    align-content: center;
+    margin: 0 37px 0;
+    align-items: center;
+}
+
+#work-heading{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container{
+    padding-top: 5rem;
+    font-size: 20px;
+    display: inline-flex;
+    justify-content: center;
+    background-color: #073B4C;
+    width: 100%;
+    font-family: serif;
+}
+
+#contact-form{
+    margin-top: 5rem;
+    margin-left: 4rem;
+}
+
+#contact-form{
+    width:40%
+}
+
+footer{
+    /* display: flex; */
+    /* justify-content: center; */
+    background-color: #118AB2;
+}
+
+#first-note{
+    display: flex;
+    justify-content: center;
+}
+
+#second-note{
+    display: flex;
+    justify-content: center;
+}

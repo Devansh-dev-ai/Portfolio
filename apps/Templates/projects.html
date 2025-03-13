@@ -1,0 +1,16 @@
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ userprojects.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+
+
+{% for project in projectsdata %}
+    <p>{{ project.name }}</p>
+    <p>{{ project.description }}</p>
+    <p>{{ project.github_link }}</p>
+    <li><img src="{{ project.project_picture.url }}" alt="{{ project.name }}"></li>
+    {% empty %}
+{% endfor %}
