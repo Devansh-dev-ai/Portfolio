@@ -107,9 +107,10 @@
                     <div class="relative overflow-hidden">
                         <a  class = "" href="{{project.github_link}}">
                             <img class= "h-60 w-60"src="{{project.project_picture.url}}" alt="">
+                        
+                            <div class=" text-lg font-serif font-semibold absolute h-full w-full bg-slate-700/20 flex items-center justify-center -bottom-0 
+                                opacity-0 group-hover:opacity-100 transition-all duration-300">{{project.name}}</div>
                         </a>
-                        <div class=" text-lg font-serif font-semibold absolute h-full w-full bg-slate-700/20 flex items-center justify-center -bottom-0 
-                            opacity-0 group-hover:opacity-100 transition-all duration-300">{{project.name}}</div>
                     </div>
                 </div>
                 {% endfor %}
