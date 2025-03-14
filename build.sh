@@ -2,6 +2,7 @@
 # exit on error
 set -o errexit
 
+pip install 'whitenoise[brotli]'
 pip install -r requirement.txt
 
 python manage.py collectstatic --no-input
